@@ -3,21 +3,12 @@ import classNames from "classnames";
 import classes from "./button.module.css";
 
 const Button = (props) => {
-  let cls = "";
+  const cls = classNames(classes.button, {
+    [classes.light]: props.variant === "light",
+    [classes.dark]: props.variant === "dark",
+  });
 
-  if (props.variant === "light") {
-    cls = classes.light;
-  }
-
-  if (props.variant === "dark") {
-    cls = classes.dark;
-  }
-
-  return (
-    <button className={classNames(classes.button, `${cls}`)}>
-      {props.children}
-    </button>
-  );
+  return <button className={cls}>{props.children}</button>;
 };
 
 export default Button;
