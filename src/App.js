@@ -1,3 +1,5 @@
+import Button from "./components/button/button";
+
 import { Route, Routes } from "react-router-dom";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
