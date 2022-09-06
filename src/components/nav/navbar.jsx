@@ -1,21 +1,32 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-
+import Navlink from "./navlink";
 import classes from "./navbar.module.css";
 
 const Navbar = () => {
+  const links = [
+    {
+      className: "navLink",
+      name: "Pricing",
+      route: "/pricing",
+    },
+    {
+      name: "About",
+      route: "/about",
+    },
+    {
+      name: "Contact",
+      route: "/contact",
+    },
+  ];
+
   return (
     <nav>
       <ul className={classes.navList}>
-        <li className={classes.navListTab}>
-          <NavLink to="/">Pricing</NavLink>
-        </li>
-        <li className={classes.navListTab}>
-          <NavLink to="/">About</NavLink>
-        </li>
-        <li className={classes.navListTab}>
-          <NavLink to="/contact">Contact</NavLink>
-        </li>
+        {links.map((link) => (
+          <li className={link.Navlink}>
+            <Navlink to={link.route}>{link.name}</Navlink>
+          </li>
+        ))}
       </ul>
     </nav>
   );
