@@ -1,12 +1,15 @@
 import Button from "./components/button/button";
 
+import { Route, Routes } from "react-router-dom";
+import Contact from "./pages/Contact";
+import Home from "./pages/Home";
+
 function App() {
   return (
-    <div className="app">
-      <Button>primary button</Button>
-      <Button variant="light">light button</Button>
-      <Button variant="dark">dark button</Button>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/contact" element={<Contact />} />
+    </Routes>
   );
 }
 
