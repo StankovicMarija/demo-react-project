@@ -1,0 +1,11 @@
+.navLink {
+  text-decoration: none;
+  color: #36536b;
+  opacity: 0.7;
+  font-weight: bold;
+  padding: 0 20px;
+}
+
+.navLink:hover {
+  opacity: 1;
+}
