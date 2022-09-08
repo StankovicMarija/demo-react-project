@@ -32,13 +32,13 @@
   padding-left: 27px;
 }
 
-.text a {
+/* .text a {
   color: #6c8294;
   text-decoration: none;
   font-weight: bold;
-}
+} */
 
-.inputemail {
+.inputEmail {
   position: relative;
   display: block;
   background-color: #fbfcfe;
@@ -52,7 +52,7 @@
   cursor: pointer;
 }
 
-.inputemail::placeholder {
+.inputEmail::placeholder {
   font-family: "Public Sans";
   font-weight: bold;
   color: #36536b;
@@ -60,13 +60,13 @@
   padding: 0;
 }
 
-.sheduleform {
+.sheduleForm {
   position: relative;
   display: flex;
   margin-right: 130px;
 }
 
-.formbutton {
+.formButton {
   position: absolute;
   right: 0;
 }

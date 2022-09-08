@@ -2,6 +2,7 @@ import React from "react";
 import Mobile from "./mobile";
 import classes from "./hero.module.css";
 import Button from "../button/button";
+import Link from "../nav/link";
 
 const Hero = () => {
   return (
@@ -11,20 +12,19 @@ const Hero = () => {
         <h1 className={classes.caption}>
           Start building with our APIs for absolutely free.
         </h1>
-        <div className={classes.sheduleform}>
+        <div className={classes.sheduleForm}>
           <input
-            className={classes.inputemail}
+            className={classes.inputEmail}
             type="text"
             name="email"
             placeholder="Enter email address"
           />
-          <div className={classes.formbutton}>
+          <div className={classes.formButton}>
             <Button>Schedule a Demo</Button>
           </div>
         </div>
-        <h3 className={classes.text}>
-          Have any questions?<a href="#">Contact Us</a>
-        </h3>
+        <h3 className={classes.text}>Have any questions?</h3>
+        <Link>Contact Us</Link>
       </div>
     </div>
   );

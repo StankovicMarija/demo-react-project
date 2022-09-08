@@ -1,11 +1,10 @@
 import React from "react";
-import Navlink from "./navlink";
+import Link from "./link";
 import classes from "./navbar.module.css";
 
 const Navbar = () => {
   const links = [
     {
-      className: "navLink",
       name: "Pricing",
       route: "/pricing",
     },
@@ -23,8 +22,8 @@ const Navbar = () => {
     <nav>
       <ul className={classes.navList}>
         {links.map((link) => (
-          <li className={link.Navlink}>
-            <Navlink to={link.route}>{link.name}</Navlink>
+          <li>
+            <Link to={link.route}>{link.name}</Link>
           </li>
         ))}
       </ul>
