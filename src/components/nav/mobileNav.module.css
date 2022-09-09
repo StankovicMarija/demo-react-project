@@ -1,0 +1,9 @@
+.mobMenu {
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .mobMenu {
+    display: none;
+  }
+}

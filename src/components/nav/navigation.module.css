@@ -1,8 +1,39 @@
-.nav {
-  display: grid;
-  grid-template-columns: 1fr 1fr 5fr;
-  align-items: center;
-  justify-items: end;
-  padding: 45px 165px;
+.navigation {
   background-color: #edf3f8;
+}
+.mobileNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 25px;
+}
+
+.nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .navigation {
+    padding: 40px;
+  }
+
+  .mobileNav {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1440px) {
+  .nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 5fr;
+    align-items: center;
+    justify-items: end;
+    padding: 45px 165px;
+  }
 }

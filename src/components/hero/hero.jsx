@@ -3,11 +3,12 @@ import classes from "./hero.module.css";
 import Button from "../button/button";
 import Link from "../nav/link";
 import Input from "../input/input";
+import mobile from "../../img/mobile.svg";
 
 const Hero = () => {
   return (
     <div className={classes.heroContainer}>
-      <img src="../../img/mob.svg" alt="mobile" />
+      <img className={classes.mobImg} src={mobile} alt="mobile" />
       <div className={classes.wrapper}>
         <h1 className={classes.caption}>
           Start building with our APIs for absolutely free.
@@ -20,9 +21,11 @@ const Hero = () => {
             <Button>Schedule a Demo</Button>
           </div>
         </div>
-        <h3 className={classes.text}>Have any questions?</h3>
-        <div className={classes.linkWrapper}>
-          <Link>Contact Us</Link>
+        <div className={classes.contactWrapper}>
+          <h3 className={classes.text}>Have any questions?</h3>
+          <div className={classes.linkWrapper}>
+            <Link to="/contact">Contact Us</Link>
+          </div>
         </div>
       </div>
     </div>
