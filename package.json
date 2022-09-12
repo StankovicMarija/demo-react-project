@@ -22,8 +22,15 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "airbnb"
+    ],
+    "rules": {
+      "react/function-component-definition": "off",
+      "react/prop-types": "off"
+    }
   },
   "browserslist": {
     "production": [
@@ -36,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^19.0.4"
   }
 }

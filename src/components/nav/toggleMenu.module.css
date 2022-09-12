@@ -21,3 +21,8 @@
   height: 2px;
   opacity: 15%;
 }
+
+.btnWrapper {
+  background-color: transparent;
+  border: none;
+}

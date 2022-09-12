@@ -1,20 +1,20 @@
-import React from "react";
-import Link from "./link";
-import classes from "./navbar.module.css";
+import React from 'react';
+import Link from './link';
+import classes from './navbar.module.css';
 
 const Navbar = () => {
   const links = [
     {
-      name: "Pricing",
-      route: "/pricing",
+      name: 'Pricing',
+      route: '/pricing',
     },
     {
-      name: "About",
-      route: "/about",
+      name: 'About',
+      route: '/about',
     },
     {
-      name: "Contact",
-      route: "/contact",
+      name: 'Contact',
+      route: '/contact',
     },
   ];
 
