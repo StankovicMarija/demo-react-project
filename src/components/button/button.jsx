@@ -1,14 +1,14 @@
-import React from "react";
-import classNames from "classnames";
-import classes from "./button.module.css";
+import React from 'react';
+import classNames from 'classnames';
+import classes from './button.module.css';
 
-const Button = (props) => {
+const Button = ({ variant, children }) => {
   const cls = classNames(classes.button, {
-    [classes.light]: props.variant === "light",
-    [classes.dark]: props.variant === "dark",
+    [classes.light]: variant === 'light',
+    [classes.dark]: variant === 'dark',
   });
 
-  return <button className={cls}>{props.children}</button>;
+  return <button type="button" className={cls}>{children}</button>;
 };
 
 export default Button;
