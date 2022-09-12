@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { useState } from 'react';
 import closeImg from '../../img/x.svg';
 import Button from '../button/button';
@@ -19,17 +18,16 @@ const ToggleMenu = () => {
   };
 
   return (
-    <div
-      role="button"
-      className={isOpen ? classes.openMenu : classes.closeMenu}
-    >
-      <img
+    <div className={isOpen ? classes.openMenu : classes.closeMenu}>
+      <button
+        className={classes.btnWrapper}
+        type="button"
         onClick={handleOpenMenu}
         onKeyDown={handleOnPressEnter}
-        className={classes.closeImg}
-        src={closeImg}
-        alt="close"
-      />
+      >
+        <img className={classes.closeImg} src={closeImg} alt="close" />
+      </button>
+
       <span className={classes.navMobileLine} />
       <Navbar />
       <Button>Schedule a Demo</Button>
