@@ -1,5 +1,20 @@
 .navList {
   list-style: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 0;
+}
+
+@media (max-width: 768px) {
+  .listLink {
+    padding: 35px;
+  }
+}
+
+@media (min-width: 768px) {
+  .navList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

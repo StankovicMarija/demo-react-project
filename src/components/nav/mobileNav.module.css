@@ -1,5 +1,6 @@
 .mobMenu {
   cursor: pointer;
+  min-width: none;
 }
 
 @media (min-width: 768px) {
