@@ -16,23 +16,16 @@ const Navigation = () => {
   };
 
   return (
-    <div>
-      <div className={classes.navigation}>
-        <div className={classes.nav}>
-          <Logo />
-          <Navbar />
-          <Button>Schedule a Demo</Button>
-        </div>
-        <div className={classes.mobileNav}>
-          <Logo />
-          <MobileNav openMenu={openMenuHandler} />
-          <MobileOpenMenu closeMenu={closeMenuHandler} isOpen={isOpen} />
-        </div>
+    <div className={classes.navigation}>
+      <div className={classes.nav}>
+        <Logo />
+        <Navbar />
+        <Button>Schedule a Demo</Button>
       </div>
       <div className={classes.mobileNav}>
         <Logo />
-        <MobileNav onClick={openMenuHandler} />
-        <MobileOpenMenu />
+        <MobileNav openMenu={openMenuHandler} />
+        <MobileOpenMenu closeMenu={closeMenuHandler} isOpen={isOpen} />
       </div>
     </div>
   );

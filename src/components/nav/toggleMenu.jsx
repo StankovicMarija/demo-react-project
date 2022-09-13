@@ -4,18 +4,18 @@ import Button from '../button/button';
 import Navbar from './navbar';
 import classes from './toggleMenu.module.css';
 
-const MobileOpenMenu = ({ handleOpenMenu }) => {
+const MobileOpenMenu = ({ openMenuHandler, openMenu, isOpen }) => {
   function handleOnPressEnter(event) {
     if (event.key === 'Enter') {
-      handleOpenMenu();
+      openMenuHandler();
     }
   }
 
-    <div className={handleOpenMenu.isOpen ? classes.openMenu : classes.closeMenu}>
+    <div className={isOpen ? classes.openMenu : classes.closeMenu}>
       <button
         className={classes.btnWrapper}
         type="button"
-        onClick={handleOpenMenu}
+        onClick={openMenu}
         onKeyDown={handleOnPressEnter}
       >
         <img className={classes.closeImg} src={closeImg} alt="close" />
