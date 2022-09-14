@@ -1,9 +1,10 @@
 .inputEmail {
+  box-sizing: border-box;
+  width: 100%;
   display: block;
   background-color: #fbfcfe;
   box-shadow: 10px 10px 25px -10px #36536b40;
   border-radius: 24px;
-  width: 75%;
   border: none;
   padding: 15px;
   padding-left: 27px;
@@ -12,9 +13,10 @@
 }
 
 .inputEmail::placeholder {
-  font-family: "Public Sans";
+  font-family: 'Public Sans';
   font-weight: bold;
   color: #36536b;
+  font-size: 15px;
+  line-height: 18px;
   opacity: 0.5;
-  padding: 0;
 }

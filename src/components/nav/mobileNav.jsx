@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './mobileNav.module.css';
 import mobMenuIcon from '../../img/mobMenuIcon.svg';
 
-const MobileNav = ({ openMenu }) => {
+const MobileNav = ({ openMenu }) => (
   <div className={classes.mobMenu}>
     <input
       className={classes.mobMenuIcon}
@@ -11,7 +11,7 @@ const MobileNav = ({ openMenu }) => {
       alt="mobile menu"
       onClick={openMenu}
     />
-  </div>;
-};
+  </div>
+);
 
 export default MobileNav;

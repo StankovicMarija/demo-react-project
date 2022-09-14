@@ -3,7 +3,7 @@ import classes from './hero.module.css';
 import Button from '../button/button';
 import Link from '../nav/link';
 import Input from '../input/input';
-import mobile from '../../img/mobile.svg';
+import mobile from '../../img/mobile.png';
 
 const Hero = () => (
   <div className={classes.heroContainer}>

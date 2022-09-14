@@ -20,7 +20,9 @@ const Navigation = () => {
       <div className={classes.nav}>
         <Logo />
         <Navbar />
-        <Button>Schedule a Demo</Button>
+        <div className={classes.btnWrapper}>
+          <Button>Schedule a Demo</Button>
+        </div>
       </div>
       <div className={classes.mobileNav}>
         <Logo />
