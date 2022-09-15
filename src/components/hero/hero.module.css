@@ -9,49 +9,42 @@
 }
 
 .mobImg {
-  text-align: center;
-  margin: 0;
-  max-height: 400px;
+  height: 240px;
+  width: 125px;
+  border-radius: 15px;
 }
 
 .caption {
-  font-family: "DM Serif Display", serif;
+  font-family: 'DM Serif Display', serif;
   color: #36536b;
   font-size: 32px;
   line-height: 36px;
   text-align: center;
-  letter-spacing: -0.246154px;
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .wrapper {
-  padding: 30px;
+  padding: 24px;
+  margin-bottom: 54px;
 }
 
 .text {
-  font-family: "Public Sans";
+  font-family: 'Public Sans';
   font-weight: normal;
   font-size: 15px;
   line-height: 18px;
   color: #6c8294;
-}
-
-.mobImg {
-  min-width: 400px;
-  min-height: 650px;
+  margin: 0;
 }
 
 .formButton {
-  display: block;
   text-align: center;
-  width: auto;
+  margin-bottom: 24px;
 }
 
 .wrapperEmail {
-  display: block;
-  width: 100%;
-  padding: 16px;
+  margin-bottom: 16px;
 }
 
 .contactWrapper {
@@ -67,10 +60,24 @@
 }
 
 @media (min-width: 768px) {
+  .mobImg {
+    width: 156px;
+    height: 300px;
+    border-radius: 15px;
+    margin-top: 8px;
+    margin-bottom: 24px;
+  }
+
   .caption {
     font-size: 48px;
     line-height: 56px;
-    padding: 0 25px;
+    padding: 0 98px;
+    letter-spacing: -0.35px;
+  }
+
+  .wrapperEmail {
+    width: 100%;
+    padding: 0 160px;
   }
 
   .sheduleForm {
@@ -79,13 +86,16 @@
     text-align: center;
     margin: 30px;
     margin-bottom: 0;
-    align-items: center;
   }
 
   .formButton {
     position: absolute;
     right: 0;
     margin-right: 100px;
+  }
+
+  .wrapper {
+    margin-bottom: 99px;
   }
 }
 
@@ -94,10 +104,18 @@
     flex-direction: row-reverse;
     justify-content: space-around;
     align-items: center;
-    padding: 0 165px;
+    padding: 75px 165px;
   }
+
+  .mobImg {
+    width: 258px;
+    height: 500px;
+  }
+
   .wrapper {
-    margin-right: 130px;
+    margin-right: 200px;
+    padding: 0;
+    padding-top: 50px;
   }
 
   .caption {
@@ -106,11 +124,14 @@
     letter-spacing: -0.55px;
     text-align: left;
     margin: 0;
+    padding: 0;
     margin-bottom: 20px;
   }
 
   .wrapperEmail {
     position: relative;
+    padding: 0;
+    width: 75%;
   }
 
   .sheduleForm {

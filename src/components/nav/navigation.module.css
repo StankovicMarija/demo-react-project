@@ -5,7 +5,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 25px;
+  padding: 40px 24px;
+}
+
+.btnWrapper {
+  max-width: 173px;
 }
 
 .nav {
@@ -14,7 +18,7 @@
 
 @media (min-width: 768px) {
   .navigation {
-    padding: 40px;
+    padding: 40px 40px;
   }
 
   .mobileNav {
@@ -29,6 +33,10 @@
 }
 
 @media (min-width: 1440px) {
+  .navigation {
+    padding: 0;
+  }
+
   .nav {
     display: grid;
     grid-template-columns: 1fr 1fr 5fr;
