@@ -1,0 +1,11 @@
+.clientLogo {
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  .clientLogo {
+    padding: 20px;
+  }
+}
+
+
