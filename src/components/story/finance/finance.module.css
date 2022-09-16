@@ -1,0 +1,26 @@
+.wrapper {
+  padding: 60px 24px;
+}
+
+.img {
+  text-align: center;
+  margin: 32px;
+}
+
+.subtitle {
+  padding: 16px;
+}
+
+.text {
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    display: flex;
+  }
+
+  .payment {
+    margin: 15px;
+  }
+}
