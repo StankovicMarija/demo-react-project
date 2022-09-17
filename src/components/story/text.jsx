@@ -1,6 +1,13 @@
 import React from 'react';
+import classNames from 'classnames';
 import classes from './text.module.css';
 
-const Text = ({ children }) => <div className={classes.text}>{children}</div>;
+const Text = ({ variant, children }) => {
+  const cls = classNames(classes.text, {
+    [classes.centerAlign]: variant === 'centerAlign',
+  });
+
+  return <div className={cls}>{children}</div>;
+};
 
 export default Text;

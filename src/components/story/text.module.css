@@ -10,4 +10,8 @@
   .text {
     text-align: left;
   }
+
+  .centerAlign {
+    text-align: center;
+  }
 }

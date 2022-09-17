@@ -17,7 +17,7 @@ function EasyToImplement() {
           <img src={code} alt="code-text" />
         </div>
       </div>
-      <div>
+      <div className={classes.textWrapper}>
         <Caption>Easy to implement</Caption>
         <div className={classes.text}>
           <Text>

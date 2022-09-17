@@ -17,7 +17,7 @@ const Finance = () => (
         <Subtitle>Personal Finances</Subtitle>
       </div>
       <div className={classes.text}>
-        <Text>
+        <Text variant="centerAlign">
           Consolidate financial data from multiple sources and categorize
           transactions up to 2 years of history. Analyze reports to reconcile
           activities in your account.
@@ -32,7 +32,7 @@ const Finance = () => (
         <Subtitle>Banking &amp; Coverage</Subtitle>
       </div>
       <div className={classes.text}>
-        <Text>
+        <Text variant="centerAlign">
           With our platform, you can speed up account onboarding and support
           ongoing payments for checking, savings, credit card, and brokerage
           accounts.
@@ -47,7 +47,7 @@ const Finance = () => (
         <Subtitle>Consumer Payments</Subtitle>
       </div>
       <div className={classes.text}>
-        <Text>
+        <Text variant="centerAlign">
           Its easier to set up secure bank payments with us through a flow
           designed with the user experience in mind. Customers could instantly
           authenticate their account.

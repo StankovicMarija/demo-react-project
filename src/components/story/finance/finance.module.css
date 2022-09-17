@@ -1,10 +1,11 @@
 .wrapper {
-  padding: 60px 24px;
+  padding: 30px 24px 60px;
 }
 
 .img {
   text-align: center;
-  margin: 32px;
+  margin-top: 48px;
+  margin-bottom: 16px;
 }
 
 .subtitle {
@@ -22,5 +23,11 @@
 
   .payment {
     margin: 15px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .wrapper {
+    padding: 30px 160px 90px;
   }
 }
