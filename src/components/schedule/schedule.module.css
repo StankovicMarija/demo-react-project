@@ -1,0 +1,60 @@
+.wrapper {
+  background-color: #edf3f8;
+}
+
+.caption {
+  font-family: 'DM Serif Display';
+  color: #36536b;
+  font-size: 32px;
+  line-height: 36px;
+  text-align: center;
+  letter-spacing: -0.25px;
+  margin: 0;
+}
+
+.formWrapper {
+  padding: 32px 24px 80px;
+}
+
+.btnWrapper {
+  margin-top: 16px;
+}
+
+@media (min-width: 768px) {
+  .caption {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  .formWrapper {
+    padding: 40px 160px 100px;
+    position: relative;
+    display: flex;
+    text-align: center;
+  }
+
+  .btnWrapper {
+    position: absolute;
+    right: 0;
+    margin-right: 160px;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 165px 96px;
+  }
+
+  .formWrapper {
+    padding: 0;
+    width: 50%;
+  }
+
+  .btnWrapper {
+    margin-right: 0px;
+  }
+}
