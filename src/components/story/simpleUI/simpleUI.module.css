@@ -1,0 +1,51 @@
+.mobileBox {
+  display: flex;
+  justify-content: center;
+  padding: 55px 24px 48px;
+}
+
+.mobileCut {
+  border-radius: 30px;
+  max-width: 150px;
+  padding: 10px;
+}
+
+.text {
+  padding: 24px 24px 0;
+}
+
+@media (min-width: 768px) {
+  .text {
+    max-width: 580px;
+    margin: 0 auto;
+    margin-top: 24px;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 0 165px;
+  }
+
+  .mobileBox {
+    margin-left: 100px;
+    padding: 0;
+  }
+
+  .mobileCut {
+    border-radius: 60px;
+    min-width: 250px;
+    padding: 25px;
+  }
+
+  .text {
+    padding: 0;
+    margin-top: 24px;
+    max-width: 450px;
+  }
+}

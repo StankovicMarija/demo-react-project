@@ -1,0 +1,17 @@
+.text {
+  font-family: 'Public Sans';
+  font-size: 15px;
+  line-height: 28px;
+  text-align: center;
+  color: #6c8294;
+}
+
+@media (min-width: 1440px) {
+  .text {
+    text-align: left;
+  }
+
+  .centerAlign {
+    text-align: center;
+  }
+}
