@@ -1,20 +1,20 @@
 import React from 'react';
-import face from '../../../img/footer/f.svg';
-import tweet from '../../../img/footer/tw.svg';
-import ln from '../../../img/footer/ln.svg';
 import classes from './imgLink.module.css';
+import { ReactComponent as FacebookLogo } from '../../../img/footer/f.svg';
+import { ReactComponent as TweeterLogo } from '../../../img/footer/tw.svg';
+import { ReactComponent as LinkedinLogo } from '../../../img/footer/ln.svg';
 
 function ImgLink() {
   return (
     <div>
       <div className={classes.imgLink}>
-        <img src={face} alt="facebook" />
+        <FacebookLogo className={classes.imgLinkSvg} />
       </div>
       <div className={classes.imgLink}>
-        <img src={tweet} alt="tweeter" />
+        <TweeterLogo className={classes.imgLinkSvg} />
       </div>
       <div className={classes.imgLink}>
-        <img src={ln} alt="linkedin" />
+        <LinkedinLogo className={classes.imgLinkSvg} />
       </div>
     </div>
   );
