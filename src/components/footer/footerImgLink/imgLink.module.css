@@ -3,7 +3,11 @@
   display: inline-block;
 }
 
-.imgLink:hover {
+.imgLinkSvg {
+  fill: #FBFCFE;
+}
+
+.imgLinkSvg:hover {
   cursor: pointer;
   fill: #da6d97;
 }
