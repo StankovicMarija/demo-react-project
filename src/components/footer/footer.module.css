@@ -1,0 +1,42 @@
+.wrapper {
+  background-color: #1b262f;
+}
+
+.logo {
+  text-align: center;
+  padding-top: 41px;
+}
+
+.imgLinks {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 55px;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 31px 40px;
+  }
+
+  .logo {
+    padding-top: 0;
+  }
+
+  .imgLinks {
+    padding: 0;
+    margin-left: 80px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .wrapper {
+    padding: 31px 165px;
+  }
+
+  .imgLinks {
+    margin-left: 480px;
+  }
+}

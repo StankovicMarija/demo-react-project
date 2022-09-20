@@ -1,0 +1,9 @@
+.imgLink {
+  padding: 0 12px;
+  display: inline-block;
+}
+
+.imgLink:hover {
+  cursor: pointer;
+  fill: #da6d97;
+}
