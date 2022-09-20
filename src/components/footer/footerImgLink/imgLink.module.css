@@ -1,0 +1,13 @@
+.imgLink {
+  padding: 0 12px;
+  display: inline-block;
+}
+
+.imgLinkSvg {
+  fill: #fbfcfe;
+}
+
+.imgLinkSvg:hover {
+  cursor: pointer;
+  fill: #da6d97;
+}
