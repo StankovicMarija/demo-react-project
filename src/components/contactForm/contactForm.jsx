@@ -13,66 +13,105 @@ function Form() {
     title: '',
     message: '',
     checkbox: false,
-    errorMessage: '',
-    helpmessage: '',
   });
 
-  const [isSubscribed, setIsSubscribed] = useState(false);
-  const [isValid, setIsValid] = useState();
-
-  const handleCheckbox = () => setIsSubscribed(!isSubscribed);
-
-  const [isError, setIsError] = useState({
+  const [errors, setIsError] = useState({
     nameError: '',
     emailError: '',
     companyNameError: '',
     titleError: '',
   });
 
+  const [isValid, setIsValid] = useState();
+
   const onChange = (e) => {
-    const { name, value } = e.target;
-    setEnteredValues({ ...enteredValues, [name]: value });
-  };
+    const isCheckbox = e.target.type === 'checkbox';
+    setEnteredValues((prevState) => ({
+      ...prevState,
+      [e.target.name]: isCheckbox ? e.target.checked : e.target.value,
+    }));
 
-  function validate(values) {
-    if (!values.name.trim()) {
-      setIsError({ ...setIsError, nameError: 'This field cant be empty' });
-    }
+    const counter = 0;
 
-    if (!values.email.trim()) {
-      setIsError({ ...setIsError, emailError: 'This field cant be empty' });
-    } else if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-    ) {
-      setIsError({ ...setIsError, emailError: 'Incorect email format' });
-    }
-
-    if (!values.companyName.trim()) {
-      setIsError({
-        ...setIsError,
-        companyNameError: 'This field cant be empty',
-      });
-    }
-    if (!values.title.trim()) {
-      setIsError({ ...setIsError, titleError: 'This field cant be empty' });
-    }
-    if (setEnteredValues.errorMessage) {
+    if (!enteredValues.name.trim()) {
+      setIsError((prevState) => ({
+        ...prevState,
+        nameError: 'This field cant be empty',
+      }));
       setIsValid(false);
+    } else {
+      setIsError((prevState) => ({
+        ...prevState,
+        nameError: '',
+      }));
     }
-  }
 
+    if (!enteredValues.email.trim()) {
+      setIsError((prevState) => ({
+        ...prevState,
+        emailError: 'This field cant be empty',
+      }));
+      setIsValid(false);
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(enteredValues.email)
+    ) {
+      setIsError((prevState) => ({
+        ...prevState,
+        emailError: 'Incorect email format',
+      }));
+      setIsValid(false);
+    } else {
+      setIsError((prevState) => ({
+        ...prevState,
+        emailError: '',
+      }));
+    }
+
+    if (!enteredValues.companyName.trim()) {
+      setIsError((prevState) => ({
+        ...prevState,
+        companyNameError: 'This field cant be empty',
+      }));
+      setIsValid(false);
+    } else {
+      setIsError((prevState) => ({
+        ...prevState,
+        companyNameError: '',
+      }));
+    }
+
+    if (!enteredValues.title.trim()) {
+      setIsError((prevState) => ({
+        ...prevState,
+        titleError: 'This field cant be empty',
+        errors: { counter } + 1,
+      }));
+      setIsValid(false);
+    } else {
+      setIsError((prevState) => ({
+        ...prevState,
+        titleError: '',
+      }));
+    }
+    if (
+      errors.nameError === ''
+      && errors.emailError === ''
+      && errors.companyNameError === ''
+      && errors.titleError === ''
+    ) {
+      setIsValid(true);
+    }
+  };
+  console.log(errors);
+  console.log(enteredValues);
+  console.log(isValid);
   const handlerSubmit = (event) => {
     event.preventDefault();
-
-    validate(enteredValues);
-    console.log(enteredValues);
-    // if (isValid) {
-    if (!isValid) {
+    if (isValid) {
       alert(JSON.stringify({ enteredValues }));
     }
   };
 
-  console.log(enteredValues.errorMessage);
   return (
     <form className={classes.form} onSubmit={handlerSubmit}>
       <div className={classes.input}>
@@ -83,7 +122,7 @@ function Form() {
           placeholder="Name"
           value={enteredValues.name}
           onChange={onChange}
-          errorMessage={isError.nameError}
+          errorMessage={errors.nameError}
         />
       </div>
       <div className={classes.input}>
@@ -94,7 +133,7 @@ function Form() {
           placeholder="Email Address"
           value={enteredValues.email}
           onChange={onChange}
-          errorMessage={isError.emailError}
+          errorMessage={errors.emailError}
         />
       </div>
       <div className={classes.input}>
@@ -105,7 +144,7 @@ function Form() {
           placeholder="Company Name"
           value={enteredValues.companyName}
           onChange={onChange}
-          errorMessage={isError.companyNameError}
+          errorMessage={errors.companyNameError}
         />
       </div>
       <div className={classes.input}>
@@ -116,7 +155,7 @@ function Form() {
           placeholder="Title"
           value={enteredValues.title}
           onChange={onChange}
-          errorMessage={isError.titleError}
+          errorMessage={errors.titleError}
         />
       </div>
       <div className={classes.input}>
@@ -133,8 +172,8 @@ function Form() {
         <InputField
           id="subscribe"
           type="checkbox"
-          value={isSubscribed}
-          onClick={handleCheckbox}
+          value={enteredValues.checkbox}
+          onClick={onChange}
         />
         <label htmlFor="subscribe" className={classes.label}>
           Stay up-to-date with company announcements and updates to our API
@@ -148,4 +187,5 @@ function Form() {
     </form>
   );
 }
+
 export default Form;
