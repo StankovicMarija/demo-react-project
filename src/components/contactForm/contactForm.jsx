@@ -31,8 +31,6 @@ function Form() {
       [e.target.name]: isCheckbox ? e.target.checked : e.target.value,
     }));
 
-    const counter = 0;
-
     if (!enteredValues.name.trim()) {
       setIsError((prevState) => ({
         ...prevState,
@@ -84,7 +82,6 @@ function Form() {
       setIsError((prevState) => ({
         ...prevState,
         titleError: 'This field cant be empty',
-        errors: { counter } + 1,
       }));
       setIsValid(false);
     } else {
@@ -93,6 +90,7 @@ function Form() {
         titleError: '',
       }));
     }
+
     if (
       errors.nameError === ''
       && errors.emailError === ''
@@ -102,9 +100,6 @@ function Form() {
       setIsValid(true);
     }
   };
-  console.log(errors);
-  console.log(enteredValues);
-  console.log(isValid);
   const handlerSubmit = (event) => {
     event.preventDefault();
     if (isValid) {

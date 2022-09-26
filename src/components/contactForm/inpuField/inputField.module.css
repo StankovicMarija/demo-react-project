@@ -27,6 +27,15 @@
   opacity: 1;
 }
 
+.invalid {
+  color: #ff0000;
+  border-bottom: 1px solid #ff0000;
+}
+
+input::placeholder {
+  color: inherit;
+}
+
 input ~ span {
   font-family: 'Public Sans';
   font-weight: 400;

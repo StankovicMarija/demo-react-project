@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import classes from './inputField.module.css';
 
 const InputField = ({
@@ -9,19 +10,25 @@ const InputField = ({
   value,
   onChange,
   errorMessage,
-}) => (
-  <div>
-    <input
-      id={id}
-      type={type}
-      name={name}
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-      className={classes.input}
-    />
-    {errorMessage && <span className={classes.errors}>{errorMessage}</span>}
-  </div>
-);
+}) => {
+  const cls = classNames(classes.input, {
+    [classes.invalid]: errorMessage !== '' && name !== 'message',
+  });
+
+  return (
+    <div>
+      <input
+        id={id}
+        type={type}
+        name={name}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        className={cls}
+      />
+      {errorMessage && <span className={classes.errors}>{errorMessage}</span>}
+    </div>
+  );
+};
 
 export default InputField;
