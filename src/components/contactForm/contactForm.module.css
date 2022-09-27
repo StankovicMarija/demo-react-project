@@ -6,6 +6,7 @@
 .checkboxWrapper {
   display: flex;
   align-items: center;
+  padding-top: 24px;
 }
 
 .btnWrapper {
@@ -31,6 +32,7 @@ input[type='checkbox'] {
   height: 24px;
   cursor: pointer;
   transition: opacity 0.2s;
+  vertical-align: middle;
   border-bottom: none;
   padding: 0;
   margin-top: 12px;

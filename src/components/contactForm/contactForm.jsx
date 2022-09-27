@@ -12,7 +12,7 @@ function Form() {
     companyName: '',
     title: '',
     message: '',
-    checkbox: false,
+    checkbox: '',
   });
 
   const [errors, setIsError] = useState({
@@ -22,7 +22,7 @@ function Form() {
     titleError: '',
   });
 
-  const [isValid, setIsValid] = useState();
+  const [isValid, setIsValid] = useState(false);
 
   const onChange = (e) => {
     const isCheckbox = e.target.type === 'checkbox';
@@ -103,7 +103,7 @@ function Form() {
   const handlerSubmit = (event) => {
     event.preventDefault();
     if (isValid) {
-      alert(JSON.stringify({ enteredValues }));
+      alert(JSON.stringify(enteredValues));
     }
   };
 
