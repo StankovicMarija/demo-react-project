@@ -1,109 +1,64 @@
 /* eslint-disable max-len */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React from 'react';
 import classes from './contactForm.module.css';
 import InputField from './inpuField/inputField';
 import Button from '../button/button';
+import useForm from './useForm';
+
+const formConfig = {
+  name: {
+    id: 'name',
+    type: 'input',
+    value: '',
+    placeholder: 'Name',
+    validation: ['required'],
+  },
+  email: {
+    id: 'email',
+    type: 'input',
+    value: '',
+    placeholder: 'Email',
+    validation: ['required', 'email'],
+  },
+  companyName: {
+    id: 'companyName',
+    type: 'input',
+    value: '',
+    placeholder: 'Company Name',
+    validation: ['required'],
+  },
+  title: {
+    id: 'title',
+    type: 'input',
+    value: '',
+    placeholder: 'Title',
+    validation: ['required'],
+  },
+  message: {
+    id: 'message',
+    type: 'input',
+    value: '',
+    placeholder: 'Message',
+  },
+  checkbox: {
+    id: 'checkbox',
+    type: 'checkbox',
+    value: '',
+  },
+};
 
 function Form() {
-  const [enteredValues, setEnteredValues] = useState({
-    name: '',
-    email: '',
-    companyName: '',
-    title: '',
-    message: '',
-    checkbox: '',
-  });
+  const {
+    formData, errors, onChange, validate, isValid,
+  } = useForm(formConfig);
 
-  const [errors, setIsError] = useState({
-    nameError: '',
-    emailError: '',
-    companyNameError: '',
-    titleError: '',
-  });
-
-  const [isValid, setIsValid] = useState(false);
-
-  const onChange = (e) => {
-    const isCheckbox = e.target.type === 'checkbox';
-    setEnteredValues((prevState) => ({
-      ...prevState,
-      [e.target.name]: isCheckbox ? e.target.checked : e.target.value,
-    }));
-
-    if (!enteredValues.name.trim()) {
-      setIsError((prevState) => ({
-        ...prevState,
-        nameError: 'This field cant be empty',
-      }));
-      setIsValid(false);
-    } else {
-      setIsError((prevState) => ({
-        ...prevState,
-        nameError: '',
-      }));
-    }
-
-    if (!enteredValues.email.trim()) {
-      setIsError((prevState) => ({
-        ...prevState,
-        emailError: 'This field cant be empty',
-      }));
-      setIsValid(false);
-    } else if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(enteredValues.email)
-    ) {
-      setIsError((prevState) => ({
-        ...prevState,
-        emailError: 'Incorect email format',
-      }));
-      setIsValid(false);
-    } else {
-      setIsError((prevState) => ({
-        ...prevState,
-        emailError: '',
-      }));
-    }
-
-    if (!enteredValues.companyName.trim()) {
-      setIsError((prevState) => ({
-        ...prevState,
-        companyNameError: 'This field cant be empty',
-      }));
-      setIsValid(false);
-    } else {
-      setIsError((prevState) => ({
-        ...prevState,
-        companyNameError: '',
-      }));
-    }
-
-    if (!enteredValues.title.trim()) {
-      setIsError((prevState) => ({
-        ...prevState,
-        titleError: 'This field cant be empty',
-      }));
-      setIsValid(false);
-    } else {
-      setIsError((prevState) => ({
-        ...prevState,
-        titleError: '',
-      }));
-    }
-
-    if (
-      errors.nameError === ''
-      && errors.emailError === ''
-      && errors.companyNameError === ''
-      && errors.titleError === ''
-    ) {
-      setIsValid(true);
-    }
-  };
   const handlerSubmit = (event) => {
     event.preventDefault();
+    validate(formData);
+    console.log(formData);
     if (isValid) {
-      alert(JSON.stringify(enteredValues));
+      alert(JSON.stringify(formData.value));
     }
   };
 
@@ -115,9 +70,9 @@ function Form() {
           type="text"
           name="name"
           placeholder="Name"
-          value={enteredValues.name}
+          value={formData.name.value}
           onChange={onChange}
-          errorMessage={errors.nameError}
+          errorMessage={errors.name}
         />
       </div>
       <div className={classes.input}>
@@ -126,9 +81,9 @@ function Form() {
           type="text"
           name="email"
           placeholder="Email Address"
-          value={enteredValues.email}
+          value={formData.email.value}
           onChange={onChange}
-          errorMessage={errors.emailError}
+          errorMessage={errors.email}
         />
       </div>
       <div className={classes.input}>
@@ -137,9 +92,9 @@ function Form() {
           type="text"
           name="companyName"
           placeholder="Company Name"
-          value={enteredValues.companyName}
+          value={formData.companyName.value}
           onChange={onChange}
-          errorMessage={errors.companyNameError}
+          errorMessage={errors.companyName}
         />
       </div>
       <div className={classes.input}>
@@ -148,9 +103,9 @@ function Form() {
           type="text"
           name="title"
           placeholder="Title"
-          value={enteredValues.title}
+          value={formData.title.value}
           onChange={onChange}
-          errorMessage={errors.titleError}
+          errorMessage={errors.title}
         />
       </div>
       <div className={classes.input}>
@@ -159,7 +114,7 @@ function Form() {
           type="text"
           name="message"
           placeholder="Message"
-          value={enteredValues.message}
+          value={formData.message.value}
           onChange={onChange}
         />
       </div>
@@ -167,7 +122,7 @@ function Form() {
         <InputField
           id="subscribe"
           type="checkbox"
-          value={enteredValues.checkbox}
+          value={formData.checkbox.value}
           onClick={onChange}
         />
         <label htmlFor="subscribe" className={classes.label}>
