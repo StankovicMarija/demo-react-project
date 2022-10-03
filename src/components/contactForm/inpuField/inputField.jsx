@@ -12,7 +12,7 @@ const InputField = ({
   errorMessage,
 }) => {
   const cls = classNames(classes.input, {
-    [classes.invalid]: errorMessage !== '' && name !== 'message',
+    [classes.invalid]: !!errorMessage,
   });
 
   return (

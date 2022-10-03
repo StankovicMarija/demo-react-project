@@ -36,29 +36,25 @@ const formConfig = {
     validation: ['required'],
   },
   message: {
-    id: 'message',
     type: 'input',
-    value: '',
     placeholder: 'Message',
   },
   checkbox: {
-    id: 'checkbox',
     type: 'checkbox',
-    value: '',
   },
 };
 
 function Form() {
   const {
-    formData, errors, onChange, validate, isValid,
+    formData, errors, onChange, validate,
   } = useForm(formConfig);
 
   const handlerSubmit = (event) => {
     event.preventDefault();
-    validate(formData);
-    console.log(formData);
+    const isValid = validate(formData);
+
     if (isValid) {
-      alert(JSON.stringify(formData.value));
+      alert(JSON.stringify(formData));
     }
   };
 
