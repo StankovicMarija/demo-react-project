@@ -22,8 +22,8 @@ const useForm = (formConfig) => {
 
   const validate = (data) => {
     const validationErrors = {};
-    Object.values(data).forEach((input) => {
-      const inputName = input.id;
+    Object.values(data).forEach((input, index) => {
+      const inputName = Object.keys(data)[index];
       if (input.validation) {
         if (input.validation.includes('required') && !input.value.trim()) {
           validationErrors[inputName] = 'This field cant be empty';

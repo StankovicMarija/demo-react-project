@@ -8,36 +8,33 @@ import useForm from './useForm';
 
 const formConfig = {
   name: {
-    id: 'name',
     type: 'input',
-    value: '',
     placeholder: 'Name',
+    value: '',
     validation: ['required'],
   },
   email: {
-    id: 'email',
     type: 'input',
-    value: '',
     placeholder: 'Email',
+    value: '',
     validation: ['required', 'email'],
   },
   companyName: {
-    id: 'companyName',
     type: 'input',
-    value: '',
     placeholder: 'Company Name',
+    value: '',
     validation: ['required'],
   },
   title: {
-    id: 'title',
     type: 'input',
-    value: '',
     placeholder: 'Title',
+    value: '',
     validation: ['required'],
   },
   message: {
     type: 'input',
     placeholder: 'Message',
+    value: '',
   },
   checkbox: {
     type: 'checkbox',
@@ -52,7 +49,6 @@ function Form() {
   const handlerSubmit = (event) => {
     event.preventDefault();
     const isValid = validate(formData);
-
     if (isValid) {
       alert(JSON.stringify(formData));
     }
@@ -62,7 +58,6 @@ function Form() {
     <form className={classes.form} onSubmit={handlerSubmit}>
       <div className={classes.input}>
         <InputField
-          id="name"
           type="text"
           name="name"
           placeholder="Name"
@@ -73,7 +68,6 @@ function Form() {
       </div>
       <div className={classes.input}>
         <InputField
-          id="email"
           type="text"
           name="email"
           placeholder="Email Address"
@@ -84,7 +78,6 @@ function Form() {
       </div>
       <div className={classes.input}>
         <InputField
-          id="companyName"
           type="text"
           name="companyName"
           placeholder="Company Name"
@@ -95,7 +88,6 @@ function Form() {
       </div>
       <div className={classes.input}>
         <InputField
-          id="title"
           type="text"
           name="title"
           placeholder="Title"
@@ -106,7 +98,6 @@ function Form() {
       </div>
       <div className={classes.input}>
         <InputField
-          id="message"
           type="text"
           name="message"
           placeholder="Message"
@@ -116,7 +107,6 @@ function Form() {
       </div>
       <div className={classes.checkboxWrapper}>
         <InputField
-          id="subscribe"
           type="checkbox"
           value={formData.checkbox.value}
           onClick={onChange}

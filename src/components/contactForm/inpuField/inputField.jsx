@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import classes from './inputField.module.css';
 
 const InputField = ({
-  id,
   type,
   name,
   placeholder,
@@ -18,7 +17,6 @@ const InputField = ({
   return (
     <div>
       <input
-        id={id}
         type={type}
         name={name}
         placeholder={placeholder}
