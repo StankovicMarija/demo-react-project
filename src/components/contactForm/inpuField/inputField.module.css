@@ -1,0 +1,48 @@
+.input {
+  font-family: 'Public Sans';
+  font-style: 'Regular';
+  font-size: 15px;
+  line-height: 25px;
+  text-align: left;
+  letter-spacing: -0.12px;
+  opacity: 0.5;
+  color: #36536b;
+  background-color: transparent;
+  display: block;
+  width: 90%;
+  border: none;
+  border-bottom: 1px solid #36536b80;
+  padding: 24px 20px 16px;
+  outline: none;
+}
+
+.input:hover,
+.input:focus-visible,
+.input:active {
+  outline: none;
+  color: #36536b;
+  border-bottom: 1px solid #36536b;
+  cursor: pointer;
+  outline-offset: none;
+  opacity: 1;
+}
+
+.invalid {
+  color: #ff0000;
+  border-bottom: 1px solid #ff0000;
+}
+
+input::placeholder {
+  color: inherit;
+}
+
+input ~ span {
+  font-family: 'Public Sans';
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: -0.01px;
+  color: #ff0000;
+  opacity: 0.5;
+  padding-left: 20px;
+}
