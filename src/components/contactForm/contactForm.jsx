@@ -9,35 +9,31 @@ import useForm from './useForm';
 const formConfig = {
   name: {
     type: 'input',
-    placeholder: 'Name',
     value: '',
     validation: ['required'],
   },
   email: {
     type: 'input',
-    placeholder: 'Email',
     value: '',
     validation: ['required', 'email'],
   },
   companyName: {
     type: 'input',
-    placeholder: 'Company Name',
     value: '',
     validation: ['required'],
   },
   title: {
     type: 'input',
-    placeholder: 'Title',
     value: '',
     validation: ['required'],
   },
   message: {
     type: 'input',
-    placeholder: 'Message',
     value: '',
   },
   checkbox: {
     type: 'checkbox',
+    value: '',
   },
 };
 
