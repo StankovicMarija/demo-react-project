@@ -12,7 +12,13 @@ const Modal = () => {
   });
 
   return ReactDOM.createPortal(
-    <div className={cls}>
+    <div
+      className={cls}
+      onClick={closeModal}
+      onKeyPress={(ev) => (ev.key === 'Escape' ? closeModal : null)}
+      role="button"
+      tabIndex="0"
+    >
       <div className={classes.modal}>
         <button
           className={classes.btnClose}
@@ -21,7 +27,12 @@ const Modal = () => {
         >
           &times;
         </button>
-        <ModalContent className={classes.content} />
+        <ModalContent
+          className={classes.content}
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+        />
       </div>
     </div>,
     document.querySelector('#root-modal'),

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const useModal = () => {
   const [showModal, setShowModal] = useState(false);
@@ -13,14 +13,6 @@ const useModal = () => {
     setShowModal(true);
     document.body.style.overflow = 'hidden';
   }
-
-  useEffect(() => {
-    const handleKeyPress = (event) => (event.key === 'Escape' ? closeModal : null);
-    document.body.addEventListener('keydown', handleKeyPress);
-    return () => {
-      document.body.removeEventListener('keydown', handleKeyPress);
-    };
-  }, []);
 
   return {
     showModal,
