@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Logo from '../logo';
 import Button from '../button/button';
 import classes from './navigation.module.css';
 import Navbar from './navbar';
 import MobileNav from './mobileNav';
 import MobileOpenMenu from './toggleMenu';
+import ModalContext from '../modal/modalContext';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,13 +16,14 @@ const Navigation = () => {
     setIsOpen(false);
   };
 
+  const ctx = useContext(ModalContext);
   return (
     <div className={classes.navigation}>
       <div className={classes.nav}>
         <Logo />
         <Navbar />
         <div className={classes.btnWrapper}>
-          <Button>Schedule a Demo</Button>
+          <Button onClick={ctx.openModal}>Schedule a Demo</Button>
         </div>
       </div>
       <div className={classes.mobileNav}>

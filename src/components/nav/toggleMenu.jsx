@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import closeImg from '../../img/x.svg';
 import Button from '../button/button';
 import Navbar from './navbar';
 import classes from './toggleMenu.module.css';
+import ModalContext from '../modal/modalContext';
 
 const MobileOpenMenu = ({ openMenuHandler, closeMenu, isOpen }) => {
   const handleOnPressEnter = (event) => {
@@ -10,6 +11,7 @@ const MobileOpenMenu = ({ openMenuHandler, closeMenu, isOpen }) => {
       openMenuHandler();
     }
   };
+  const { openModal } = useContext(ModalContext);
 
   return (
     <div className={isOpen ? classes.openMenu : classes.closeMenu}>
@@ -25,7 +27,7 @@ const MobileOpenMenu = ({ openMenuHandler, closeMenu, isOpen }) => {
       <div className={classes.navBarWrapper}>
         <Navbar mobNav="mobileNav" />
       </div>
-      <Button>Schedule a Demo</Button>
+      <Button onClick={openModal}>Schedule a Demo</Button>
     </div>
   );
 };
