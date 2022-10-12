@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import classes from './modal.module.css';
@@ -6,16 +6,39 @@ import ModalContent from './modalContent';
 import ModalContext from './modalContext';
 
 const Modal = () => {
-  const { showModal, closeModal } = useContext(ModalContext);
+  const {
+    showModal, closeModal,
+  } = useContext(ModalContext);
   const cls = classNames(classes.wrapper, {
     [classes.showModal]: showModal,
   });
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Escape') {
+      closeModal();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyPress);
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  });
+
+  const handleCloseModal = (e) => {
+    e.nativeEvent.stopImmediatePropagation();
+    // console.log(e.nativeEvent);
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
+  };
+
   return ReactDOM.createPortal(
     <div
       className={cls}
-      onClick={closeModal}
-      onKeyPress={(ev) => (ev.key === 'Escape' ? closeModal : null)}
+      onClick={handleCloseModal}
+      onKeyDown={handleKeyPress}
       role="button"
       tabIndex="0"
     >
@@ -29,9 +52,6 @@ const Modal = () => {
         </button>
         <ModalContent
           className={classes.content}
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
         />
       </div>
     </div>,
