@@ -1,4 +1,9 @@
 .content {
-  width: 150px;
-  height: 150px;
+  background-color: #edf3f8;
+  padding: 24px;
+}
+
+.btnWrapper {
+  max-width: 152px;
+  padding: 24px 0;
 }
