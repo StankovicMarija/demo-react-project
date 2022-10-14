@@ -21,9 +21,13 @@ const ModalProvider = ({ children }) => {
   }
 
   return (
-    <Provider value={{
-      modalContent, showModal, openModal, closeModal,
-    }}
+    <Provider
+      value={{
+        modalContent,
+        showModal,
+        openModal,
+        closeModal,
+      }}
     >
       {children}
       <Modal />

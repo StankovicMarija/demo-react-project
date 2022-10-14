@@ -7,7 +7,7 @@ import ModalContext from '../modal/useModal';
 import SubscriptionForm from '../modal/subscriptionForm';
 
 const MobileOpenMenu = ({ openMenuHandler, closeMenu, isOpen }) => {
-  const handleOnPressEnter = (event) => {
+  const handleOnPressEnter = event => {
     if (event.key === 'Enter') {
       openMenuHandler();
     }
@@ -28,7 +28,9 @@ const MobileOpenMenu = ({ openMenuHandler, closeMenu, isOpen }) => {
       <div className={classes.navBarWrapper}>
         <Navbar mobNav="mobileNav" />
       </div>
-      <Button onClick={() => openModal(<SubscriptionForm />)}>Schedule a Demo</Button>
+      <Button onClick={() => openModal(<SubscriptionForm />)}>
+        Schedule a Demo
+      </Button>
     </div>
   );
 };

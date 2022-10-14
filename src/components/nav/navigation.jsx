@@ -26,7 +26,9 @@ const Navigation = () => {
         <Logo />
         <Navbar />
         <div className={classes.btnWrapper}>
-          <Button onClick={() => ctx.openModal(<SubscriptionForm />)}>Schedule a Demo</Button>
+          <Button onClick={() => ctx.openModal(<SubscriptionForm />)}>
+            Schedule a Demo
+          </Button>
         </div>
       </div>
       <div className={classes.mobileNav}>

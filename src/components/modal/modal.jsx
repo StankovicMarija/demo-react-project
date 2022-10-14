@@ -6,15 +6,13 @@ import ModalContent from './modalContent';
 import ModalContext from './useModal';
 
 const Modal = () => {
-  const {
-    showModal, closeModal, modalContent,
-  } = useContext(ModalContext);
+  const { showModal, closeModal, modalContent } = useContext(ModalContext);
 
   const cls = classNames(classes.wrapper, {
     [classes.showModal]: showModal,
   });
 
-  const handleKeyPress = (e) => {
+  const handleKeyPress = e => {
     if (e.key === 'Escape') {
       closeModal();
     }
@@ -27,7 +25,7 @@ const Modal = () => {
     };
   });
 
-  const handleCloseModal = (e) => {
+  const handleCloseModal = e => {
     if (e.target === e.currentTarget) {
       closeModal();
     }
@@ -42,19 +40,13 @@ const Modal = () => {
       tabIndex="0"
     >
       <div className={classes.modal}>
-        <button
-          className={classes.btnClose}
-          onClick={closeModal}
-          type="button"
-        >
+        <button className={classes.btnClose} onClick={closeModal} type="button">
           &times;
         </button>
-        <ModalContent className={classes.content}>
-          {modalContent}
-        </ModalContent>
+        <ModalContent className={classes.content}>{modalContent}</ModalContent>
       </div>
     </div>,
-    document.querySelector('#root-modal'),
+    document.querySelector('#root-modal')
   );
 };
 

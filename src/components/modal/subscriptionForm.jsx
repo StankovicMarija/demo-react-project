@@ -28,11 +28,9 @@ const formConfig = {
 };
 
 const SubscriptionForm = () => {
-  const {
-    formData, errors, onChange, validate,
-  } = useForm(formConfig);
+  const { formData, errors, onChange, validate } = useForm(formConfig);
 
-  const handlerSubmit = (event) => {
+  const handlerSubmit = event => {
     event.preventDefault();
     const isValid = validate(formData);
     if (isValid) {

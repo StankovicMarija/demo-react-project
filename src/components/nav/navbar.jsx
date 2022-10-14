@@ -21,7 +21,7 @@ const Navbar = ({ mobNav }) => {
   return (
     <nav>
       <ul className={classes.navList}>
-        {links.map((link) => (
+        {links.map(link => (
           <li key={link.name} className={classes.listLink}>
             <Link variant={mobNav} className={classes.link} to={link.route}>
               {link.name}
