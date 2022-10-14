@@ -4,12 +4,9 @@ import imgs from './clientLogoImages';
 
 const ClientsLogo = () => (
   <>
-    {imgs.map((clientLogo) => (
+    {imgs.map(clientLogo => (
       <div key={clientLogo.name} className={classes.clientLogo}>
-        <img
-          src={clientLogo.src}
-          alt={clientLogo.name}
-        />
+        <img src={clientLogo.src} alt={clientLogo.name} />
       </div>
     ))}
   </>
