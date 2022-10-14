@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import classes from './modal.module.css';
 import ModalContent from './modalContent';
-import ModalContext from './modalContext';
+import ModalContext from './useModal';
 
 const Modal = () => {
   const {
-    showModal, closeModal,
+    showModal, closeModal, modalContent,
   } = useContext(ModalContext);
+
   const cls = classNames(classes.wrapper, {
     [classes.showModal]: showModal,
   });
@@ -27,8 +28,6 @@ const Modal = () => {
   });
 
   const handleCloseModal = (e) => {
-    e.nativeEvent.stopImmediatePropagation();
-    // console.log(e.nativeEvent);
     if (e.target === e.currentTarget) {
       closeModal();
     }
@@ -50,9 +49,9 @@ const Modal = () => {
         >
           &times;
         </button>
-        <ModalContent
-          className={classes.content}
-        />
+        <ModalContent className={classes.content}>
+          {modalContent}
+        </ModalContent>
       </div>
     </div>,
     document.querySelector('#root-modal'),

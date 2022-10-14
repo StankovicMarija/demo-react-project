@@ -1,22 +1,28 @@
-import React from 'react';
-import useModal from './useModal';
+import React, { useState } from 'react';
+import ModalContext from './useModal';
 import Modal from './modal';
-import ModalContext from './modalContext';
+
+const { Provider } = ModalContext;
 
 const ModalProvider = ({ children }) => {
-  const { Provider } = ModalContext;
+  const [modalContent, setModalContent] = useState();
 
-  const {
-    showModal,
-    closeModal,
-    openModal,
-  } = useModal();
+  const [showModal, setShowModal] = useState(false);
+
+  const closeModal = () => {
+    setShowModal(false);
+    document.body.style.overflow = 'visible';
+  };
+
+  function openModal(content) {
+    setModalContent(content);
+    setShowModal(true);
+    document.body.style.overflow = 'hidden';
+  }
 
   return (
     <Provider value={{
-      showModal,
-      closeModal,
-      openModal,
+      modalContent, showModal, openModal, closeModal,
     }}
     >
       {children}

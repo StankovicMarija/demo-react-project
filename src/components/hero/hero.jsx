@@ -4,7 +4,8 @@ import Button from '../button/button';
 import Link from '../nav/link';
 import Input from '../input/input';
 import mobile from '../../img/mobile.png';
-import ModalContext from '../modal/modalContext';
+import ModalContext from '../modal/useModal';
+import SubscriptionForm from '../modal/subscriptionForm';
 
 const Hero = () => {
   const ctx = useContext(ModalContext);
@@ -20,7 +21,7 @@ const Hero = () => {
             <Input />
           </div>
           <div className={classes.formButton}>
-            <Button onClick={ctx.openModal}>Schedule a Demo</Button>
+            <Button onClick={() => ctx.openModal(<SubscriptionForm />)}>Schedule a Demo</Button>
           </div>
         </div>
         <div className={classes.contactWrapper}>

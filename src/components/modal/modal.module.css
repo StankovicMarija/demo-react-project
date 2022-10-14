@@ -7,14 +7,13 @@
   left: 0;
   justify-content: center;
   align-items: center;
-  z-index: 50;
-  background-color: #6c8294e7;
+  z-index: 100;
+  background-color: #6c8294f3;
   visibility: hidden;
   opacity: 0;
-  overflow: hidden;
 }
 
-.showModal{
+.showModal {
   visibility: visible;
   opacity: 1;
 }
@@ -22,11 +21,11 @@
 .modal {
   background-color: #fbfcfe;
   position: relative;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 800px;
-  z-index: 100;
   margin: 0 auto;
-  transform: translate(0, -50%);
 }
 
 .btnClose {
@@ -39,4 +38,3 @@
   color: #36536b;
   background-color: transparent;
 }
-

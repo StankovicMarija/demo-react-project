@@ -34,6 +34,12 @@ const useForm = (formConfig) => {
         ) {
           validationErrors.email = 'Incorect email format';
         }
+        if (
+          input.validation.includes('date')
+          && !/^\d{2}[./-]\d{2}[./-]\d{4}$/i.test(input.value)
+        ) {
+          validationErrors.date = 'Incorect date format';
+        }
       }
     });
 

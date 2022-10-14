@@ -3,7 +3,8 @@ import closeImg from '../../img/x.svg';
 import Button from '../button/button';
 import Navbar from './navbar';
 import classes from './toggleMenu.module.css';
-import ModalContext from '../modal/modalContext';
+import ModalContext from '../modal/useModal';
+import SubscriptionForm from '../modal/subscriptionForm';
 
 const MobileOpenMenu = ({ openMenuHandler, closeMenu, isOpen }) => {
   const handleOnPressEnter = (event) => {
@@ -27,7 +28,7 @@ const MobileOpenMenu = ({ openMenuHandler, closeMenu, isOpen }) => {
       <div className={classes.navBarWrapper}>
         <Navbar mobNav="mobileNav" />
       </div>
-      <Button onClick={openModal}>Schedule a Demo</Button>
+      <Button onClick={() => openModal(<SubscriptionForm />)}>Schedule a Demo</Button>
     </div>
   );
 };
