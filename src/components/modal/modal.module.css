@@ -1,0 +1,40 @@
+.wrapper {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  background-color: #6c8294f3;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.showModal {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal {
+  background-color: #fbfcfe;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.btnClose {
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 40px;
+  color: #36536b;
+  background-color: transparent;
+}

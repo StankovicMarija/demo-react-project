@@ -8,7 +8,11 @@ const Button = ({ variant, children, onClick }) => {
     [classes.dark]: variant === 'dark',
   });
 
-  return <button onClick={onClick} type="button" className={cls}>{children}</button>;
+  return (
+    <button onClick={onClick} type="button" className={cls}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;

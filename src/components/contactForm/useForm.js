@@ -1,16 +1,16 @@
 /* eslint-disable max-len */
 import { useState } from 'react';
 
-const isValid = (validationErrors) => Object.keys(validationErrors).length === 0;
+const isValid = validationErrors => Object.keys(validationErrors).length === 0;
 
-const useForm = (formConfig) => {
+const useForm = formConfig => {
   const [formData, setFormData] = useState(formConfig);
 
   const [errors, setIsError] = useState({});
 
-  const onChange = (e) => {
+  const onChange = e => {
     const isCheckbox = e.target.type === 'checkbox';
-    const enteredValues = (prevState) => ({
+    const enteredValues = prevState => ({
       ...prevState,
       [e.target.name]: {
         ...prevState[e.target.name],
@@ -20,7 +20,7 @@ const useForm = (formConfig) => {
     setFormData(enteredValues);
   };
 
-  const validate = (data) => {
+  const validate = data => {
     const validationErrors = {};
     Object.values(data).forEach((input, index) => {
       const inputName = Object.keys(data)[index];
@@ -29,10 +29,16 @@ const useForm = (formConfig) => {
           validationErrors[inputName] = 'This field cant be empty';
         }
         if (
-          input.validation.includes('email')
-          && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(input.value)
+          input.validation.includes('email') &&
+          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(input.value)
         ) {
           validationErrors.email = 'Incorect email format';
+        }
+        if (
+          input.validation.includes('date') &&
+          !/^\d{2}[./-]\d{2}[./-]\d{4}$/i.test(input.value)
+        ) {
+          validationErrors.date = 'Incorect date format';
         }
       }
     });

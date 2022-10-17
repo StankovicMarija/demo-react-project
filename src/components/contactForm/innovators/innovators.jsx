@@ -10,7 +10,9 @@ import nvidia from '../../../img/innovators/nvidia.svg';
 function Innovators() {
   return (
     <div className={classes.wrapper}>
-      <h3 className={classes.text}>Join the thousands of innovators already building with us</h3>
+      <h3 className={classes.text}>
+        Join the thousands of innovators already building with us
+      </h3>
       <div className={classes.logo}>
         <img src={tesla} alt="tesla" />
         <img src={msoft} alt="msoft" />

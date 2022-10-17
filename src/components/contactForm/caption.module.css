@@ -21,7 +21,7 @@
     line-height: 56px;
     letter-spacing: -0.37px;
   }
-  .wrapper{
+  .wrapper {
     padding: 24px 140px;
   }
 }
@@ -32,8 +32,8 @@
     text-align: left;
     letter-spacing: -0.43px;
   }
-  .wrapper{
-    padding-right:  40%;
+  .wrapper {
+    padding-right: 40%;
     padding-left: 160px;
   }
 }
