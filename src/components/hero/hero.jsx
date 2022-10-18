@@ -1,14 +1,15 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import classes from './hero.module.css';
 import Button from '../button/button';
 import Link from '../nav/link';
 import Input from '../input/input';
 import mobile from '../../img/mobile.png';
-import ModalContext from '../modal/useModal';
 import SubscriptionForm from '../modal/subscriptionForm';
+import useModalState from '../modal/modalState';
 
 const Hero = () => {
-  const ctx = useContext(ModalContext);
+  const { openModal } = useModalState();
+
   return (
     <div className={classes.heroContainer}>
       <img className={classes.mobImg} src={mobile} alt="mobile" />
@@ -21,7 +22,7 @@ const Hero = () => {
             <Input />
           </div>
           <div className={classes.formButton}>
-            <Button onClick={() => ctx.openModal(<SubscriptionForm />)}>
+            <Button onClick={() => openModal(<SubscriptionForm />)}>
               Schedule a Demo
             </Button>
           </div>
