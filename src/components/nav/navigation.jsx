@@ -1,14 +1,15 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import Logo from '../logo';
 import Button from '../button/button';
 import classes from './navigation.module.css';
 import Navbar from './navbar';
 import MobileNav from './mobileNav';
 import MobileOpenMenu from './toggleMenu';
-import ModalContext from '../modal/useModal';
 import SubscriptionForm from '../modal/subscriptionForm';
+import useModalState from '../modal/modalState';
 
 const Navigation = () => {
+  const { openModal } = useModalState();
   const [isOpen, setIsOpen] = useState(false);
   const openMenuHandler = () => {
     setIsOpen(true);
@@ -19,14 +20,13 @@ const Navigation = () => {
     document.body.style.overflow = 'visible';
   };
 
-  const ctx = useContext(ModalContext);
   return (
     <div className={classes.navigation}>
       <div className={classes.nav}>
         <Logo />
         <Navbar />
         <div className={classes.btnWrapper}>
-          <Button onClick={() => ctx.openModal(<SubscriptionForm />)}>
+          <Button onClick={() => openModal(<SubscriptionForm />)}>
             Schedule a Demo
           </Button>
         </div>

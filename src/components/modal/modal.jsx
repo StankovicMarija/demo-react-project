@@ -1,12 +1,12 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import classes from './modal.module.css';
 import ModalContent from './modalContent';
-import ModalContext from './useModal';
+import useModalState from './modalState';
 
 const Modal = () => {
-  const { showModal, closeModal, modalContent } = useContext(ModalContext);
+  const { closeModal, showModal, modalContent } = useModalState();
 
   const cls = classNames(classes.wrapper, {
     [classes.showModal]: showModal,
@@ -42,7 +42,7 @@ const Modal = () => {
       <div className={classes.modal}>
         <button className={classes.btnClose} onClick={closeModal} type="button">
           &times;
-        </button>
+        </button>  
         <ModalContent className={classes.content}>{modalContent}</ModalContent>
       </div>
     </div>,

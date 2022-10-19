@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import closeImg from '../../img/x.svg';
 import Button from '../button/button';
 import Navbar from './navbar';
 import classes from './toggleMenu.module.css';
-import ModalContext from '../modal/useModal';
+import useModalState from '../modal/modalState';
 import SubscriptionForm from '../modal/subscriptionForm';
 
 const MobileOpenMenu = ({ openMenuHandler, closeMenu, isOpen }) => {
@@ -12,7 +12,7 @@ const MobileOpenMenu = ({ openMenuHandler, closeMenu, isOpen }) => {
       openMenuHandler();
     }
   };
-  const { openModal } = useContext(ModalContext);
+  const { openModal } = useModalState();
 
   return (
     <div className={isOpen ? classes.openMenu : classes.closeMenu}>

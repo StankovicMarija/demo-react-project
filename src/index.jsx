@@ -2,16 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
 import App from './App';
-import ModalProvider from './components/modal/modalProvider';
+import Modal from './components/modal/modal';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ModalProvider>
+    <RecoilRoot>
       <BrowserRouter>
         <App />
+        <Modal />
       </BrowserRouter>
-    </ModalProvider>
+    </RecoilRoot>
   </React.StrictMode>
 );
