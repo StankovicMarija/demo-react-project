@@ -3,15 +3,16 @@ import classes from './hero.module.css';
 import Button from '../button/button';
 import Link from '../nav/link';
 import Input from '../input/input';
+// import mobile from '../../img/mobile.png';
 import SubscriptionForm from '../modal/subscriptionForm';
 import useModalState from '../modal/modalState';
 import heroData from '../../data/hero';
 
 const { caption, mobileImage, subText, subTextLink, btnName } = heroData;
-
+// console.log(mobileImage);
+// console.log(mobile);
 const Hero = () => {
   const { openModal } = useModalState();
-
   return (
     <div className={classes.heroContainer}>
       <img className={classes.mobImg} src={mobileImage} alt="mobile" />
