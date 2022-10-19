@@ -6,13 +6,14 @@ import hp from '../../../img/innovators/hp.svg';
 import oracle from '../../../img/innovators/oracle.svg';
 import google from '../../../img/innovators/google.svg';
 import nvidia from '../../../img/innovators/nvidia.svg';
+import innovatorsData from '../../../data/innovators';
+
+const { text } = innovatorsData;
 
 function Innovators() {
   return (
     <div className={classes.wrapper}>
-      <h3 className={classes.text}>
-        Join the thousands of innovators already building with us
-      </h3>
+      <h3 className={classes.text}>{text}</h3>
       <div className={classes.logo}>
         <img src={tesla} alt="tesla" />
         <img src={msoft} alt="msoft" />

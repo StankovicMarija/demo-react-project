@@ -3,33 +3,10 @@ import Button from '../button/button';
 import InputField from '../contactForm/inpuField/inputField';
 import useForm from '../contactForm/useForm';
 import classes from './modalContent.module.css';
-
-const formConfig = {
-  firstName: {
-    type: 'input',
-    value: '',
-    validation: ['required'],
-  },
-  lastName: {
-    type: 'input',
-    value: '',
-    validation: ['required'],
-  },
-  modalEmail: {
-    type: 'input',
-    value: '',
-    validation: ['required', 'email'],
-  },
-  date: {
-    type: 'input',
-    value: '',
-    validation: ['required', 'date'],
-  },
-};
+import formConfig from '../../data/subcriptionForm';
 
 const SubscriptionForm = () => {
   const { formData, errors, onChange, validate } = useForm(formConfig);
-
   const handlerSubmit = event => {
     event.preventDefault();
     const isValid = validate(formData);

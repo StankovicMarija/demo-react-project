@@ -1,41 +1,10 @@
-/* eslint-disable max-len */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import classes from './contactForm.module.css';
 import InputField from './inpuField/inputField';
 import Button from '../button/button';
 import useForm from './useForm';
-
-const formConfig = {
-  name: {
-    type: 'input',
-    value: '',
-    validation: ['required'],
-  },
-  email: {
-    type: 'input',
-    value: '',
-    validation: ['required', 'email'],
-  },
-  companyName: {
-    type: 'input',
-    value: '',
-    validation: ['required'],
-  },
-  title: {
-    type: 'input',
-    value: '',
-    validation: ['required'],
-  },
-  message: {
-    type: 'input',
-    value: '',
-  },
-  checkbox: {
-    type: 'checkbox',
-    value: '',
-  },
-};
+import formConfig from '../../data/contactForm';
 
 function Form() {
   const { formData, errors, onChange, validate } = useForm(formConfig);
