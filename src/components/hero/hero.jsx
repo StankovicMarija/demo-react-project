@@ -3,15 +3,17 @@ import classes from './hero.module.css';
 import Button from '../button/button';
 import Link from '../nav/link';
 import Input from '../input/input';
-// import mobile from '../../img/mobile.png';
 import SubscriptionForm from '../modal/subscriptionForm';
 import useModalState from '../modal/modalState';
-import heroData from '../../data/hero';
 
-const { caption, mobileImage, subText, subTextLink, btnName } = heroData;
-// console.log(mobileImage);
-// console.log(mobile);
-const Hero = () => {
+const Hero = ({ heroData, subscriptionForm }) => {
+  const {
+    caption,
+    mobileImage,
+    subText,
+    subTextLink,
+    btnName,
+  } = heroData;
   const { openModal } = useModalState();
   return (
     <div className={classes.heroContainer}>
@@ -23,7 +25,11 @@ const Hero = () => {
             <Input />
           </div>
           <div className={classes.formButton}>
-            <Button onClick={() => openModal(<SubscriptionForm />)}>
+            <Button
+              onClick={() =>
+                openModal(<SubscriptionForm formConfig={subscriptionForm} />)
+              }
+            >
               {btnName}
             </Button>
           </div>

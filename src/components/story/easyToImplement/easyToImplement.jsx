@@ -3,11 +3,10 @@ import classes from './easyToImplement.module.css';
 import codeCircles from '../../../img/story/circles.svg';
 import Caption from '../caption';
 import Text from '../text';
-import easyToImplementData from '../../../data/easyToImplement';
 
-const { caption, text, code } = easyToImplementData;
+function EasyToImplement({ easyToImplementData }) {
+  const { caption, text, code } = easyToImplementData;
 
-function EasyToImplement() {
   return (
     <div className={classes.wrapper}>
       <div className={classes.code}>

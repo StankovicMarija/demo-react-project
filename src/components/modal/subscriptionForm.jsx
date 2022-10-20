@@ -3,9 +3,8 @@ import Button from '../button/button';
 import InputField from '../contactForm/inpuField/inputField';
 import useForm from '../contactForm/useForm';
 import classes from './modalContent.module.css';
-import formConfig from '../../data/subcriptionForm';
 
-const SubscriptionForm = () => {
+const SubscriptionForm = ({ formConfig }) => {
   const { formData, errors, onChange, validate } = useForm(formConfig);
   const handlerSubmit = event => {
     event.preventDefault();

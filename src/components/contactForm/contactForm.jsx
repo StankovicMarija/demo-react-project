@@ -4,10 +4,9 @@ import classes from './contactForm.module.css';
 import InputField from './inpuField/inputField';
 import Button from '../button/button';
 import useForm from './useForm';
-import formConfig from '../../data/contactForm';
 
-function Form() {
-  const { formData, errors, onChange, validate } = useForm(formConfig);
+function Form({ contactFormData }) {
+  const { formData, errors, onChange, validate } = useForm(contactFormData);
 
   const handlerSubmit = event => {
     event.preventDefault();

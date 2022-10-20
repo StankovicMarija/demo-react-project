@@ -6,11 +6,9 @@ import hp from '../../../img/innovators/hp.svg';
 import oracle from '../../../img/innovators/oracle.svg';
 import google from '../../../img/innovators/google.svg';
 import nvidia from '../../../img/innovators/nvidia.svg';
-import innovatorsData from '../../../data/innovators';
 
-const { text } = innovatorsData;
-
-function Innovators() {
+function Innovators({ innovatorsData }) {
+  const { text } = innovatorsData;
   return (
     <div className={classes.wrapper}>
       <h3 className={classes.text}>{text}</h3>
