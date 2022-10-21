@@ -5,8 +5,7 @@ import classes from './schedule.module.css';
 import SubscriptionForm from '../modal/subscriptionForm';
 import useModalState from '../modal/modalState';
 
-function Schedule({ scheduleData, subscriptionForm }) {
-  const { caption, btnName } = scheduleData;
+function Schedule({ caption, btnName  }) {
   const { openModal } = useModalState();
   return (
     <div className={classes.wrapper}>
@@ -14,11 +13,7 @@ function Schedule({ scheduleData, subscriptionForm }) {
       <div className={classes.formWrapper}>
         <Input />
         <div className={classes.btnWrapper}>
-          <Button
-            onClick={() =>
-              openModal(<SubscriptionForm formConfig={subscriptionForm} />)
-            }
-          >
+          <Button onClick={() => openModal(<SubscriptionForm />)}>
             {btnName}
           </Button>
         </div>

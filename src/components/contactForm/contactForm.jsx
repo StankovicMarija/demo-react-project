@@ -5,8 +5,39 @@ import InputField from './inpuField/inputField';
 import Button from '../button/button';
 import useForm from './useForm';
 
-function Form({ contactFormData }) {
-  const { formData, errors, onChange, validate } = useForm(contactFormData);
+const formConfig = {
+  name: {
+    type: 'input',
+    value: '',
+    validation: ['required'],
+  },
+  email: {
+    type: 'input',
+    value: '',
+    validation: ['required', 'email'],
+  },
+  companyName: {
+    type: 'input',
+    value: '',
+    validation: ['required'],
+  },
+  title: {
+    type: 'input',
+    value: '',
+    validation: ['required'],
+  },
+  message: {
+    type: 'input',
+    value: '',
+  },
+  checkbox: {
+    type: 'checkbox',
+    value: '',
+  },
+};
+
+const Form = () => {
+  const { formData, errors, onChange, validate } = useForm(formConfig);
 
   const handlerSubmit = event => {
     event.preventDefault();
@@ -84,6 +115,6 @@ function Form({ contactFormData }) {
       </div>
     </form>
   );
-}
+};
 
 export default Form;

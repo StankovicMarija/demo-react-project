@@ -4,9 +4,7 @@ import codeCircles from '../../../img/story/circles.svg';
 import Caption from '../caption';
 import Text from '../text';
 
-function EasyToImplement({ easyToImplementData }) {
-  const { caption, text, code } = easyToImplementData;
-
+function EasyToImplement({  caption, text, code }) {
   return (
     <div className={classes.wrapper}>
       <div className={classes.code}>

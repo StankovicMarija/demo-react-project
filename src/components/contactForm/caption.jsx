@@ -1,8 +1,7 @@
 import React from 'react';
 import classes from './caption.module.css';
 
-function Caption({ captionData }) {
-  const { caption } = captionData;
+function Caption({ caption }) {
   return (
     <div className={classes.wrapper}>
       <h1 className={classes.caption}>{caption}</h1>

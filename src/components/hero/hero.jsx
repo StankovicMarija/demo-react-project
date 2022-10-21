@@ -6,14 +6,7 @@ import Input from '../input/input';
 import SubscriptionForm from '../modal/subscriptionForm';
 import useModalState from '../modal/modalState';
 
-const Hero = ({ heroData, subscriptionForm }) => {
-  const {
-    caption,
-    mobileImage,
-    subText,
-    subTextLink,
-    btnName,
-  } = heroData;
+const Hero = ({ caption, mobileImage, subText, subTextLink, btnName }) => {
   const { openModal } = useModalState();
   return (
     <div className={classes.heroContainer}>
@@ -25,11 +18,7 @@ const Hero = ({ heroData, subscriptionForm }) => {
             <Input />
           </div>
           <div className={classes.formButton}>
-            <Button
-              onClick={() =>
-                openModal(<SubscriptionForm formConfig={subscriptionForm} />)
-              }
-            >
+            <Button onClick={() => openModal(<SubscriptionForm />)}>
               {btnName}
             </Button>
           </div>

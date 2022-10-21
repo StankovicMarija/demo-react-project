@@ -9,17 +9,16 @@ import classes from './Contact.module.css';
 import contactData from '../data/contact';
 
 function Contact() {
-  const { caption, formConfig, innovators, schedule, subscriptionForm } =
-    contactData;
+  const { caption, innovators, schedule } = contactData;
   return (
     <div>
-      <Navigation scheduleData={schedule} subscriptionForm={subscriptionForm}/>
-      <Caption captionData={caption} />
+      <Navigation scheduleData={schedule} />
+      <Caption caption={caption.caption} />
       <div className={classes.formWrapper}>
-        <Form contactFormData={formConfig} />
-        <Innovators innovatorsData={innovators} />
+        <Form />
+        <Innovators subtitle={innovators.subtitle} images={innovators.images} />
       </div>
-      <Schedule scheduleData={schedule} subscriptionForm={subscriptionForm} />
+      <Schedule caption={schedule.caption} btnName={schedule.btnName} />
       <Footer />
     </div>
   );

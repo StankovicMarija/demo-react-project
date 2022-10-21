@@ -2,63 +2,19 @@ export default {
   caption: {
     caption: 'Submit a help request and we will get in touch shortly.',
   },
-  formConfig: {
-    name: {
-      type: 'input',
-      value: '',
-      validation: ['required'],
-    },
-    email: {
-      type: 'input',
-      value: '',
-      validation: ['required', 'email'],
-    },
-    companyName: {
-      type: 'input',
-      value: '',
-      validation: ['required'],
-    },
-    title: {
-      type: 'input',
-      value: '',
-      validation: ['required'],
-    },
-    message: {
-      type: 'input',
-      value: '',
-    },
-    checkbox: {
-      type: 'checkbox',
-      value: '',
-    },
-  },
   innovators: {
-    text: 'Join the thousands of innovators already building with us',
+    subtitle: 'Join the thousands of innovators already building with us',
+    images: [
+      { title: 'tesla', imgSrc: 'img/innovators/tesla.svg' },
+      { title: 'msoft', imgSrc: 'img/innovators/msoft.svg' },
+      { title: 'hp', imgSrc: 'img/innovators/hp.svg' },
+      { title: 'oracle', imgSrc: 'img/innovators/oracle.svg' },
+      { title: 'google', imgSrc: 'img/innovators/google.svg' },
+      { title: 'nvidia', imgSrc: 'img/innovators/nvidia.svg' },
+    ],
   },
   schedule: {
     caption: 'Ready to start?',
     btnName: 'Schedule a Demo',
-  },
-  subscriptionForm: {
-    firstName: {
-      type: 'input',
-      value: '',
-      validation: ['required'],
-    },
-    lastName: {
-      type: 'input',
-      value: '',
-      validation: ['required'],
-    },
-    modalEmail: {
-      type: 'input',
-      value: '',
-      validation: ['required', 'email'],
-    },
-    date: {
-      type: 'input',
-      value: '',
-      validation: ['required', 'date'],
-    },
   },
 };
