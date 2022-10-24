@@ -6,17 +6,19 @@ import Footer from '../components/footer/footer';
 import Navigation from '../components/nav/navigation';
 import Schedule from '../components/schedule/schedule';
 import classes from './Contact.module.css';
+import contactData from '../data/contact';
 
 function Contact() {
+  const { caption, innovators, schedule } = contactData;
   return (
     <div>
-      <Navigation />
-      <Caption />
+      <Navigation scheduleData={schedule} />
+      <Caption caption={caption.caption} />
       <div className={classes.formWrapper}>
         <Form />
-        <Innovators />
+        <Innovators subtitle={innovators.subtitle} images={innovators.images} />
       </div>
-      <Schedule />
+      <Schedule caption={schedule.caption} btnName={schedule.btnName} />
       <Footer />
     </div>
   );

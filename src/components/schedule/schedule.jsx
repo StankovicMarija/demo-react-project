@@ -5,16 +5,16 @@ import classes from './schedule.module.css';
 import SubscriptionForm from '../modal/subscriptionForm';
 import useModalState from '../modal/modalState';
 
-function Schedule() {
+function Schedule({ caption, btnName  }) {
   const { openModal } = useModalState();
   return (
     <div className={classes.wrapper}>
-      <h3 className={classes.caption}>Ready to start?</h3>
+      <h3 className={classes.caption}>{caption}</h3>
       <div className={classes.formWrapper}>
         <Input />
         <div className={classes.btnWrapper}>
           <Button onClick={() => openModal(<SubscriptionForm />)}>
-            Schedule a Demo
+            {btnName}
           </Button>
         </div>
       </div>

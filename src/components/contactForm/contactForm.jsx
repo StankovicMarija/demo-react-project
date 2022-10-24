@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import classes from './contactForm.module.css';
@@ -37,7 +36,7 @@ const formConfig = {
   },
 };
 
-function Form() {
+const Form = () => {
   const { formData, errors, onChange, validate } = useForm(formConfig);
 
   const handlerSubmit = event => {
@@ -116,6 +115,6 @@ function Form() {
       </div>
     </form>
   );
-}
+};
 
 export default Form;

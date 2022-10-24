@@ -1,12 +1,10 @@
 import React from 'react';
 import classes from './caption.module.css';
 
-function Caption() {
+function Caption({ caption }) {
   return (
     <div className={classes.wrapper}>
-      <h1 className={classes.caption}>
-        Submit a help request and we will get in touch shortly.
-      </h1>
+      <h1 className={classes.caption}>{caption}</h1>
     </div>
   );
 }
