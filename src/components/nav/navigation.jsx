@@ -8,8 +8,7 @@ import MobileOpenMenu from './toggleMenu';
 import SubscriptionForm from '../modal/subscriptionForm';
 import useModalState from '../modal/modalState';
 
-function Navigation({ scheduleData}) {
-  const { btnName } = scheduleData;
+function Navigation({ btnName }) {
   const { openModal } = useModalState();
   const [isOpen, setIsOpen] = useState(false);
   const openMenuHandler = () => {
@@ -27,11 +26,7 @@ function Navigation({ scheduleData}) {
         <Logo />
         <Navbar />
         <div className={classes.btnWrapper}>
-          <Button
-            onClick={() =>
-              openModal(<SubscriptionForm  />)
-            }
-          >
+          <Button onClick={() => openModal(<SubscriptionForm />)}>
             {btnName}
           </Button>
         </div>
