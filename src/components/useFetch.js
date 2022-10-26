@@ -17,7 +17,7 @@ const useFetch = dataJson => {
         setLoading(false);
       }
     }
-  });
+  }, [dataJson]);
 
   return {
     data,

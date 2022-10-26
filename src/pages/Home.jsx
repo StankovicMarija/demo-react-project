@@ -14,34 +14,45 @@ const Home = () => {
 
   return data ? (
     <div>
-      {error && !loading && <ContLoader />}
       <ErrorBoundary>
         <Navigation btnName={data.schedule.btnName} />
       </ErrorBoundary>
       <ErrorBoundary>
-        <Hero
-          caption={data.hero.caption}
-          mobileImage={data.hero.mobileImage}
-          subText={data.hero.subText}
-          subTextLink={data.hero.subTextLink}
-          btnName={data.hero.btnName}
-        />
+        {!error && loading ? (
+          <Hero
+            caption={data.hero.caption}
+            mobileImage={data.hero.mobileImage}
+            subText={data.hero.subText}
+            subTextLink={data.hero.subTextLink}
+            btnName={data.hero.btnName}
+          />
+        ) : (
+          <ContLoader />
+        )}
       </ErrorBoundary>
       <ErrorBoundary>
         <Clients clientsData={data.clients} />
       </ErrorBoundary>
       <ErrorBoundary>
-        <Story
-          easyToImplement={data.story.easyToImplement}
-          simpleUI={data.story.simpleUI}
-          finance={data.story.finance}
-        />
+        {!error && loading ? (
+          <Story
+            easyToImplement={data.story.easyToImplement}
+            simpleUI={data.story.simpleUI}
+            finance={data.story.finance}
+          />
+        ) : (
+          <ContLoader />
+        )}
       </ErrorBoundary>
       <ErrorBoundary>
-        <Schedule
-          caption={data.schedule.caption}
-          btnName={data.schedule.btnName}
-        />
+        {!error && loading ? (
+          <Schedule
+            caption={data.schedule.caption}
+            btnName={data.schedule.btnName}
+          />
+        ) : (
+          <ContLoader />
+        )}
       </ErrorBoundary>
       <Footer />
     </div>

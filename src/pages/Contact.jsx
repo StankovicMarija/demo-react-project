@@ -2,6 +2,7 @@ import React from 'react';
 import Caption from '../components/contactForm/caption';
 import Form from '../components/contactForm/contactForm';
 import Innovators from '../components/contactForm/innovators/innovators';
+import ContLoader from '../components/contentLoader';
 import ErrorBoundary from '../components/errorBoundary';
 import Footer from '../components/footer/footer';
 import Navigation from '../components/nav/navigation';
@@ -14,27 +15,38 @@ function Contact() {
 
   return data ? (
     <div>
-      {error && !loading && <div>Something went wrong ...</div>}
       <ErrorBoundary>
         <Navigation btnName={data.schedule.btnName} />
       </ErrorBoundary>
       <ErrorBoundary>
-        <Caption caption={data.caption.caption} />
+        {!error && loading ? (
+          <Caption caption={data.caption.caption} />
+        ) : (
+          <ContLoader />
+        )}
       </ErrorBoundary>
       <ErrorBoundary>
         <div className={classes.formWrapper}>
           <Form />
-          <Innovators
-            subtitle={data.innovators.subtitle}
-            images={data.innovators.images}
-          />
+          {!error && loading ? (
+            <Innovators
+              subtitle={data.innovators.subtitle}
+              images={data.innovators.images}
+            />
+          ) : (
+            <ContLoader />
+          )}
         </div>
       </ErrorBoundary>
       <ErrorBoundary>
-        <Schedule
-          caption={data.schedule.caption}
-          btnName={data.schedule.btnName}
-        />
+        {!error && loading ? (
+          <Schedule
+            caption={data.schedule.caption}
+            btnName={data.schedule.btnName}
+          />
+        ) : (
+          <ContLoader />
+        )}
       </ErrorBoundary>
       <Footer />
     </div>
